@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+<form method="POST" th:each="post: ${posts}">
+    <label for="title">Title: </label>
+    <input type="text" name="title" id="title" th:value="${post.getTitle()}">
+    <br>
+    <label for="announce">Announce: </label>
+    <input type="text" name="announce" id="announce" th:value="${post.getAnnounce()}">
+    <br>
+    <label for="text">Text: </label>
+    <textarea name="text" id="text" cols="100" rows="25" th:text="${post.getText()}"/>
+    <br>
+
+    <input type="submit" value="Опубликовать пост">
+</form>
+</body>
+</html>

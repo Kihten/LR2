@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Post</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div th:each="post:${posts}">
+    <h2 th:text="${post.getTitle()}"></h2>
+    <p th:text="${post.getAnnounce()}"></p>
+    <p th:text="${post.getText()}"></p>
+    <a th:href="'/blog'">Обратно</a>
+    <a th:href="'/blog/' + ${post.getId()} + '/update'">Обновить</a>
+    <a th:href="'/blog/' + ${post.getId()} + '/delete'">Удалить</a>
+
+    <br>
+</div>
+
+
+
+</body>
+</html>
